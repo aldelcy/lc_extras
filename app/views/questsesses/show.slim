@@ -14,10 +14,12 @@
             .questions
                 = render './questions/index', questions:@questions
             span style="color:red;" All questions submitted are anonymous
-            = form_tag "/questsesses/#{@questsess.id}/questions", method: :post, remote: true do
-                = text_field_tag :title, nil, class:'full border', placeholder:'Type Question here'
-                = text_area_tag :desc, nil, class:'full border', placeholder:'Elaborate here (optional)'
-                = submit_tag :send, class:'blue right big'
+            
+            - if @questsess.active
+                = form_tag "/questsesses/#{@questsess.id}/questions", method: :post, remote: true do
+                    = text_field_tag :title, nil, class:'full border', placeholder:'Type Question here'
+                    = text_area_tag :desc, nil, class:'full border', placeholder:'Elaborate here (optional)'
+                    = submit_tag :send, class:'blue right big'
 
 
 #exampleModalLong.modal.fade tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
