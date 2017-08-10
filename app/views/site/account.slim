@@ -1,0 +1,26 @@
+.container 
+    .row
+        .col-12
+            h2 Hi #{current_user.username}
+
+            .right = link_to 'Logout', destroy_user_session_path, method: :delete
+            
+            br
+            hr
+            h5 Here are current open sessions:
+            br
+            - @questsesses.each do |sess|
+                a href="/questsesses/#{sess.refnumber}"
+                    .session
+                        h4 = sess.title
+           
+            br
+            hr
+            br
+
+            h5 Here are future Breakouts:
+            br
+            - @breakouts.each do |brk|
+                a href="/breakouts/#{sess.refnumber}"
+                    .breakouts
+                        h4 = brk.title

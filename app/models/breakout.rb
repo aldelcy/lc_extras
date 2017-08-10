@@ -7,6 +7,7 @@ class Breakout < ApplicationRecord
 
 	def set_defaults
 		self.refnumber ||= SecureRandom.hex(n=3)
+	    self.active = true
 	    self.title ||= "New Breakout"
 	end
 end

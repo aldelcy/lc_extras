@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-3
+   
+    .col-6
+      h2 Log in
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .half.field
+          = f.label :email
+          = f.email_field :email, class:'border full', autofocus: true
+        .half.field
+          = f.label :password
+          = f.password_field :password, class:'border full', autocomplete: "off"
+        - if devise_mapping.rememberable?
+          .field
+            .left = f.check_box :remember_me
+            .left = f.label :remember_me
+        br
+        .actions
+          = f.submit "Log in", class:'blue'
+      = render "devise/shared/links"
+    
+    .col-3

@@ -24,7 +24,12 @@ class QuestionsController < ApplicationController
    
     def create
         questsess = Questsess.find(params[:questsess_id])
-        @new_q = questsess.questions.create(question_params)
+        if current_user
+            @new_q = questsess.questions.create(question_params)
+            @new_q.user_id = current_user.id
+        else
+            @new_q = questsess.questions.create(question_params)
+        end
         if @new_q.save
             respond_to do |format|
                 format.js{ render layout: false, content_type: 'text/javascript' }

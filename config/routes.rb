@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "site#index"
+  authenticated do
+    root 'site#account', as: :authenticated
+  end
+  root 'site#index'
   
   resources :questsesses do
     resources :questions do
