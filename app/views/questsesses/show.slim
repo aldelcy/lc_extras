@@ -1,0 +1,22 @@
+.container
+    .row
+        .col-3
+            .sess data-session="#{@questsess.id}" style="display:none;" 
+            h1 = @questsess.title
+            hr
+            h3 = @questsess.desc
+            hr
+            h5 Number of Questions:<b class="num_quest"> #{@questions.size} </b>
+            br
+            h5 Answered Questions:<b class="num_ansquest"> #{@answered_qs} </b>
+            br
+            h5 Unanswered Questions:<b class="num_unansquest"> #{@unanswered_qs} </b>
+        
+        .col-9 style="border-left:1px solid #999;"
+            .questions
+                = render './questions/index', questions:@questions
+
+            = form_tag "/questsesses/#{@questsess.id}/questions", method: :post, remote: true do
+                = text_field_tag :title, nil, class:'full border', placeholder:'Type Question here'
+                = text_area_tag :desc, nil, class:'full border', placeholder:'Elaborate here (optional)'
+                = submit_tag :send, class:'blue right big'

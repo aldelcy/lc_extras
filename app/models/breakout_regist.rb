@@ -1,0 +1,2 @@
+class BreakoutRegist < ApplicationRecord
+end

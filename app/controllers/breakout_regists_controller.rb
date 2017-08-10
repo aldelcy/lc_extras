@@ -1,0 +1,2 @@
+class BreakoutRegistsController < ApplicationController
+end

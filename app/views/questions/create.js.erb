@@ -1,0 +1,6 @@
+'use strict';
+
+var new_q = "<%= escape_javascript (render partial: './questions/question', locals: { q:@new_q } ) %>"
+
+$('.questions').append(new_q);
+$('form')[0].reset();

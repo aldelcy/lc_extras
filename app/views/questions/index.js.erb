@@ -1,0 +1,8 @@
+'use strict';
+
+var all_q = "<%= escape_javascript (render partial: './questions/index', locals: { questions:@questions } ) %>"
+
+$('.num_quest').html("<%= @questions.size %>");
+$('.num_ansquest').html("<%= @answered_qs %>");
+$('.num_unansquest').html("<%= @unanswered_qs %>");
+$('.questions').html(all_q);
