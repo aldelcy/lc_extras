@@ -11,5 +11,20 @@
         border:1px solid #ccc;
         padding:5px 8px;
         margin:5px 8px;
+        overflow: hidden;
+        position: relative;
+        & .delete{
+            border-radius: 50%;
+            width: 10px; height:10px;
+            background-color: red;
+            position: absolute;
+            right:5px; top:5px;
+        }
     }
+}
+
+.answer{
+    margin: 5px 0px;
+    padding: 5px 8px;
+    background-color: #f9f9f9;
 }

@@ -28,8 +28,9 @@ class QuestionsController < ApplicationController
             @new_q = questsess.questions.create(question_params)
             @new_q.user_id = current_user.id
         else
-            @new_q = questsess.questions.create(question_params)
+            @new_q = questsess.questions.build(question_params)
         end
+        
         if @new_q.save
             respond_to do |format|
                 format.js{ render layout: false, content_type: 'text/javascript' }
@@ -40,6 +41,15 @@ class QuestionsController < ApplicationController
     def show
         respond_to do |format|
             format.js{ render layout: false, content_type: 'text/javascript' }
+        end
+    end
+
+    def destroy
+        @qid = @question.id
+        if @question.destroy
+            respond_to do |format|
+                format.js{ render layout: false, content_type: 'text/javascript' }
+            end
         end
     end
 

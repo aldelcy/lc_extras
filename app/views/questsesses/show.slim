@@ -6,9 +6,9 @@
             hr
             h4 = @questsess.desc
             hr
-            h6 Number of Questions:<b class="num_quest"> #{@questions.size} </b>
-            h6 style="color:green;" Answered Questions:<b class="num_ansquest"> #{@answered_qs} </b>
-            h6 style="color:red;" Unanswered Questions:<b class="num_unansquest"> #{@unanswered_qs} </b>
+            h6 Questions:<b class="num_quest"> #{@questions.size} </b>
+            h6 style="color:green;" Answered:<b class="num_ansquest"> #{@answered_qs} </b>
+            h6 style="color:red;" Unanswered:<b class="num_unansquest"> #{@unanswered_qs} </b>
         
         .col-9 style="border-left:1px solid #999;"
             .questions
@@ -26,7 +26,7 @@
         .modal-header
             h5#exampleModalLongTitle.modal-title Modal title
             button.close type="button" data-dismiss="modal" aria-label="Close"
-            span aria-hidden="true" ×
+            span aria-hidden="true"
         .modal-body
             
         .modal-footer

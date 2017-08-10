@@ -1,0 +1,5 @@
+'use strict';
+
+var answer = "<%= escape_javascript (render partial: './answers/answer', locals: { answer:@new_answer } ) %>"
+
+$('.answers').append(answer)
