@@ -5,7 +5,7 @@ br
 br
 | Answer this question:
 br
-form action="/questions/#{question.id}/answers/" method="post" data-remote="true"
+form class="answer_form" action="/questions/#{question.id}/answers/" method="post" data-remote="true"
     input.full.border type='text' id="title" name="title" placeholder="title"
     textarea.full.border id="desc" name="desc" placeholder="answer here" rows="2"
     button.blue Answer

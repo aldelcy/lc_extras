@@ -1,4 +1,4 @@
-.question data-quest="#{q.id}"
+.question class="#{'answered' if q.answers.size>0}" data-quest="#{q.id}"
     h5 = q.title
     hr
     = q.desc
@@ -6,5 +6,5 @@
     a.left style="color:red;" href="#{question_path(q.id)}" data-remote="true" data-toggle="modal" data-target="#exampleModalLong" Answer 
     .right Answers: #{q.answers.size}
 
-    a href="#{question_path(q)}" data-remote="true" data-method="delete"
+    a href="#{question_path(q)}" data-remote="true" data-method="delete" data-confirm="Are you sure?"
         .delete
