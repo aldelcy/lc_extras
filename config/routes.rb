@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   root 'site#index'
   
+  resources :questions
   resources :questsesses do
     resources :questions do
       resources :answers

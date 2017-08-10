@@ -1,0 +1,6 @@
+'use strict';
+
+var show_question = "<%= escape_javascript (render partial: './questions/show', locals: { question:@question } ) %>"
+
+$('.modal-title').html("<%= @question.title %>")
+$('.modal-body').html(show_question)

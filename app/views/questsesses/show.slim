@@ -7,10 +7,8 @@
             h4 = @questsess.desc
             hr
             h6 Number of Questions:<b class="num_quest"> #{@questions.size} </b>
-            br
-            h6 Answered Questions:<b class="num_ansquest"> #{@answered_qs} </b>
-            br
-            h6 Unanswered Questions:<b class="num_unansquest"> #{@unanswered_qs} </b>
+            h6 style="color:green;" Answered Questions:<b class="num_ansquest"> #{@answered_qs} </b>
+            h6 style="color:red;" Unanswered Questions:<b class="num_unansquest"> #{@unanswered_qs} </b>
         
         .col-9 style="border-left:1px solid #999;"
             .questions
@@ -20,3 +18,16 @@
                 = text_field_tag :title, nil, class:'full border', placeholder:'Type Question here'
                 = text_area_tag :desc, nil, class:'full border', placeholder:'Elaborate here (optional)'
                 = submit_tag :send, class:'blue right big'
+
+
+#exampleModalLong.modal.fade tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+    .modal-dialog role="document" style="background-color:white;"
+        .modal-content
+        .modal-header
+            h5#exampleModalLongTitle.modal-title Modal title
+            button.close type="button" data-dismiss="modal" aria-label="Close"
+            span aria-hidden="true" ×
+        .modal-body
+            
+        .modal-footer
+            button.btn.btn-secondary type="button" data-dismiss="modal" Close

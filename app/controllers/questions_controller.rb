@@ -37,6 +37,12 @@ class QuestionsController < ApplicationController
         end
     end
 
+    def show
+        respond_to do |format|
+            format.js{ render layout: false, content_type: 'text/javascript' }
+        end
+    end
+
     private
 
     def set_question

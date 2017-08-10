@@ -2,4 +2,6 @@
     h5 = q.title
     hr
     = q.desc
-    button.right.red Answer
+    br
+    a style="color:red;" href="#{question_path(q.id)}" data-remote="true" data-toggle="modal" data-target="#exampleModalLong" Answer 
+
