@@ -12,6 +12,6 @@
                         br
                         .left With: #{brk.where}
                         br
-                        .left Start Time: #{(brk.date - 4.hours).strftime("%m/%d/%Y at %I:%M%p")}
+                        .left Start Time: #{(brk.date).strftime("%m/%d/%Y at %I:%M%p")}
                         br
-                        .left End Time: #{(brk.date - 2.hours - 45.minutes).strftime("%m/%d/%Y at %I:%M%p")}
+                        .left End Time: #{(brk.date + 1.hour + 45.minutes).strftime("%m/%d/%Y at %I:%M%p")}

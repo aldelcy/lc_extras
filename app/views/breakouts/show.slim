@@ -7,8 +7,8 @@
             br
             hr
             br
-            h6 Start Time: #{(@breakout.date - 4.hours).strftime("%m/%d/%Y at %I:%M%p")}
-            h6 End Time: #{(@breakout.date - 2.hours - 45.minutes).strftime("%m/%d/%Y at %I:%M%p")}
+            h6 Start Time: #{(@breakout.date).strftime("%m/%d/%Y at %I:%M%p")}
+            h6 End Time: #{(@breakout.date + 1.hour + 45.minutes).strftime("%m/%d/%Y at %I:%M%p")}
             br
             - if @questsess
                 h5 Question Session:
