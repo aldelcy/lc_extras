@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :breakout_questsesses
   devise_for :users
   authenticated do
     root 'site#account', as: :authenticated

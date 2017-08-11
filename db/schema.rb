@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810190943) do
+ActiveRecord::Schema.define(version: 20170811170035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20170810190943) do
     t.datetime "updated_at",  null: false
     t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
     t.index ["user_id"], name: "index_answers_on_user_id", using: :btree
+  end
+
+  create_table "breakout_questsesses", force: :cascade do |t|
+    t.integer  "breakout_id"
+    t.integer  "questsess_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["breakout_id"], name: "index_breakout_questsesses_on_breakout_id", using: :btree
+    t.index ["questsess_id"], name: "index_breakout_questsesses_on_questsess_id", using: :btree
   end
 
   create_table "breakout_regists", force: :cascade do |t|
@@ -44,6 +53,8 @@ ActiveRecord::Schema.define(version: 20170810190943) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "active"
+    t.string   "with"
+    t.string   "where"
     t.index ["user_id"], name: "index_breakouts_on_user_id", using: :btree
   end
 
@@ -67,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170810190943) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "active"
+    t.string   "with"
     t.index ["user_id"], name: "index_questsesses_on_user_id", using: :btree
   end
 

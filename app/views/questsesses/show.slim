@@ -6,16 +6,21 @@
             hr
             h4 = @questsess.desc
             hr
+            - if @questsess.with
+                br
+                img src="/assets/#{@questsess.with.downcase}.png" width="100px"
+                h5 Ask: #{@questsess.with}
+                br
             h6 Questions:<b class="num_quest"> #{@questions.size} </b>
             h6 style="color:green;" Answered:<b class="num_ansquest"> #{@answered_qs} </b>
             h6 style="color:red;" Unanswered:<b class="num_unansquest"> #{@unanswered_qs} </b>
         
         .col-9 style="border-left:1px solid #999;"
-            .questions
+            .questions style="height:#{ '100%' if !@questsess.active};"
                 = render './questions/index', questions:@questions
-            span style="color:red;" All questions submitted are anonymous
             
             - if @questsess.active
+                span style="color:red;" All questions submitted are anonymous
                 = form_tag "/questsesses/#{@questsess.id}/questions", method: :post, remote: true do
                     = text_field_tag :title, nil, class:'full border', placeholder:'Type Question here'
                     = text_area_tag :desc, nil, class:'full border', placeholder:'Elaborate here (optional)'

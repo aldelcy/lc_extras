@@ -3,4 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.container{
+    padding: 20px;
+}
 
+.breakout{
+    display: inline-block;
+    float: none;
+    width: 24%;
+    margin: 0.5%;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color:#f9f9f9;
+    border: 1px solid #ddd; 
+}
+
+
+.breakout:hover, .breakout.done{
+    background-color:#333;
+    border: 1px solid #999; 
+}
+a .breakout:hover, a .breakout.done{ 
+    color:white;
+}

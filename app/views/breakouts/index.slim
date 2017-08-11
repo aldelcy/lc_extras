@@ -1,0 +1,17 @@
+.container
+    .row
+        .col-12 style="text-align:center;"
+            h1 BREAKOUTS:
+            hr
+            - @breakouts.order('date ASC').each do |brk|
+                a href="#{breakout_path(brk.refnumber)}"
+                    .breakout class="#{ 'done' if brk.active == false}"
+                        h4 #{brk.title}
+                        hr
+                        .left With: #{brk.with}
+                        br
+                        .left With: #{brk.where}
+                        br
+                        .left Start Time: #{(brk.date - 4.hours).strftime("%m/%d/%Y at %I:%M%p")}
+                        br
+                        .left End Time: #{(brk.date - 2.hours - 45.minutes).strftime("%m/%d/%Y at %I:%M%p")}

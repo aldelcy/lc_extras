@@ -1,0 +1,2 @@
+class BreakoutQuestsessesController < ApplicationController
+end
