@@ -1,20 +1,20 @@
 .container
-    .row
-        .col-4
-            img src="/assets/#{@breakout.with.downcase}.png" width="100px"
-            h5 With: #{@breakout.with}
-            h5 Where: #{@breakout.where}
-            br
-            hr
-            br
-            h6 Start Time: #{(@breakout.date).strftime("%m/%d/%Y at %I:%M%p")}
-            h6 End Time: #{(@breakout.date + 1.hour + 15.minutes).strftime("%m/%d/%Y at %I:%M%p")}
-            br
-            - if @questsess
-                h5 Question Session:
-                h6 
-                    a href="#{questsess_path(@questsess.refnumber)}" #{@questsess.title}
-        .col-8
-            h1 = @breakout.title
-            br
-            h5 #{simple_format(@breakout.desc)}
+.row
+.col-4
+img src="/assets/#{@breakout.with.downcase}.png" width="100px"
+h5 With: #{@breakout.with}
+h5 Where: #{@breakout.where}
+br
+hr
+br
+h6 Start Time: #{(@breakout.date).strftime("%m/%d/%Y at %I:%M%p")}
+h6 End Time: #{(@breakout.date + 1.hour + 15.minutes).strftime("%m/%d/%Y at %I:%M%p")}
+br
+- if @questsess
+h5 Question Session:
+h6 
+a href="#{questsess_path(@questsess.refnumber)}" #{@questsess.title}
+.col-8
+h1 = @breakout.title
+br
+h5 #{simple_format(@breakout.desc)}
